@@ -3,8 +3,9 @@ FROM debian:bullseye-slim
 RUN apt-get update && \
     apt-get -y install nginx
 
-COPY ./conf/default.conf /etc/nginx/conf.d/
+COPY ./default /etc/nginx/sites-enabled/default
+
 
 EXPOSE $PORT
 
-CMD nginx -g "daemon off;"
+CMD ["nginx","-g","daemon off;"]
