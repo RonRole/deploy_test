@@ -4,3 +4,5 @@ RUN apt-get update && \
     apt-get -y install nginx
 
 EXPOSE $PORT
+
+CMD ["nginx","-g","daemon off;"]
